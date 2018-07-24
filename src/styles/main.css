@@ -1,0 +1,109 @@
+/**
+ * Classes built around theme colors (These MUST be defined, as they're used in Hugo theme templates)
+ */
+
+@responsive {
+	.text-theme-primary {
+		@apply .text-rl-gray;
+	}
+
+	.bg-theme-primary {
+		@apply .bg-rl-gray-md;
+	}
+
+	.bg-theme-gradient {
+		background-image: linear-gradient(
+			to bottom,
+			config('colors.rl-gray-md'),
+			config('colors.rl-gray-md')
+		);
+	}
+
+	.bg-theme-gradient-reverse {
+		background-image: linear-gradient(
+			to top,
+			config('colors.rl-gray-md'),
+			config('colors.rl-gray-md')
+		);
+	}
+}
+
+.theme-mobile-menu {
+	@apply .text-rl-deep-blue .border-rl-deep-blue;
+}
+
+.theme-mobile-menu:hover {
+	@apply .text-rl-med-blue .border-rl-med-blue;
+}
+
+/**
+ * Other site-specific styles
+ */
+
+.bg-golden-gradient {
+	background-image: linear-gradient(
+		to bottom,
+		config('colors.rl-golden'),
+		config('colors.rl-golden-darker')
+	);
+}
+
+.bg-blue-gradient {
+	background-image: linear-gradient(
+		to bottom,
+		config('colors.rl-light-blue'),
+		config('colors.rl-med-blue')
+	);
+}
+
+.arrow-right {
+	width: 0;
+	height: 0;
+	border-left: 6px solid config('colors.rl-gray');
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+}
+
+.matrix {
+	position: absolute;
+	transform: rotate(-28deg);
+	opacity: 0.08;
+
+	@apply .rounded-xl;
+}
+
+.matrix-gray {
+	background-image: linear-gradient(to left, #000, #c7c8cf);
+}
+
+.matrix-gold {
+	@apply .bg-golden-gradient;
+}
+
+.matrix-lg {
+	@apply .matrix;
+
+	width: 12.5rem;
+	height: 2.5rem;
+}
+
+.matrix-sm {
+	@apply .matrix;
+
+	width: 5rem;
+	height: 1rem;
+}
+
+@screen md {
+	.index-triangle-top {
+		z-index: -10;
+		width: 150vw;
+		height: 1500px;
+	}
+
+	.index-triangle-bottom {
+		z-index: -10;
+		width: 150vw;
+		height: 1200px;
+	}
+}

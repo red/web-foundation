@@ -1,0 +1,82 @@
+{{ define "main" }}
+
+<div>
+    {{ partial "page-title" (dict "title" .Title "subtitle" .Params.subtitle "page" .Params)}}
+
+    <section class="px-2 py-4">
+        <div class="container mx-auto flex flex-col items-center max-w-lg">
+            <div class="inline-block mb-4">
+                <h3 class="font-semibold text-2xl text-rl-gray text-center">{{ .Params.header }}</h3>
+            </div>
+            <div>
+                {{ with .Content }}
+                    <section class="container mx-auto mt-12 px-2 md:px-8 pb-8 text-grey-darker content">
+                        {{ . }}
+                    </section>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+        
+    {{- range .Params.blocks -}}
+        {{- if eq .template "hero" -}}{{ partial "blocks/hero" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "media-feature" -}}{{ partial "blocks/media-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "narrow-feature" -}}{{ partial "blocks/narrow-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "call-to-action" -}}{{ partial "blocks/cta" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "1up" -}}{{ partial "blocks/1up" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "2up" -}}{{ partial "blocks/2up" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "1up-media" -}}{{ partial "blocks/1up-media" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "card-grid" -}}{{ partial "blocks/card-grid" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "grid-list" -}}{{ partial "blocks/grid-list" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "accordion" -}}{{ partial "blocks/accordion" (dict "Params" .) }}{{- end -}}
+    {{- end -}}
+    
+    <section class="container mx-auto mt-12 px-2 md:px-8 pb-8">
+        <h3 class="text-center font-semibold text-2xl text-rl-gray rl-ctr-title-underline mb-4">{{ .Params.team_header }}</h3>
+        <div class="flex flex-col items-center">
+            {{ range .Params.team }}
+                {{ partial "side-card" (dict "thumbnail" .profile_img "title" .name "description" .description) }}        
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="container mx-auto mt-12 px-2 md:px-8 pb-8">
+        <h3 class="text-center font-semibold text-2xl text-rl-gray rl-ctr-title-underline mb-4">{{ .Params.board_header }}</h3>
+        <div class="flex flex-col items-center">
+            {{ range .Params.board }}
+                {{ partial "side-card" (dict "thumbnail" .profile_img "title" .name "description" .description) }}        
+            {{ end }}
+        </div>
+    </section>
+    
+    {{ $contributors := getJSON "https://api.github.com/repos/red/red/stats/contributors" }}
+    {{ range sort $contributors "total" "desc" }}
+        {{ $u := (dict "description" (printf "%v (%v)" .author.login .total) "icon" .author.avatar_url) }}
+        {{ $.Scratch.Add "users" (slice $u)}}
+    {{ end }}
+    <section class="container mx-auto mt-12 px-2 md:px-8 pb-8">
+        <h3 class="font-semibold text-2xl text-rl-gray rl-l-title-underline mb-4">{{ .Params.community_header }}</h3>
+        <h4 class="font-semibold text-xl text-rl-gray mb-2">{{ .Params.top_contributors_header }}</h5>
+        {{ $p1 := (dict "num_cols" .Params.top_contributors.num_cols "grid_items" (.Scratch.Get "users")) }}
+        {{ partial "blocks/grid-list" (dict "Params" $p1) }}
+        <h4 class="font-semibold text-xl text-rl-gray mt-4 mb-2">{{ .Params.newest_members_header }}</h5>
+        {{ $p2 := (dict "num_cols" .Params.newest_members.num_cols "grid_items" .Params.newest_members.grid_items) }}
+        {{ partial "blocks/grid-list" (dict "Params" $p2) }}
+    </section>
+
+    <div class="bg-theme-gradient w-full">
+        {{ if (isset .Params "blocks") }}
+            {{- range .Params.blocks -}}
+                {{- if eq .template "action-feature" -}}{{ partial "blocks/action-feature" (dict "Params" .) }}{{- end -}}
+                {{- if eq .template "narrow-cta" -}}{{ partial "blocks/narrow-cta" (dict "Params" .) }}{{- end -}}
+            {{- end -}}
+        {{ else }}
+            {{ $p3 := (dict "heading" (i18n "cta_heading") "content" (i18n "cta_desc") "button_text" (i18n "contact") "button_url" (relLangURL "contact/") "bg_dark" false)}}
+            {{ $p4 := (dict "description" (i18n "cta_narrow_heading") "link_text" (i18n "cta_narrow_text") "link_url" (relLangURL "contact/")) }}
+            {{ partial "blocks/action-feature" (dict "Params" $p3) }}
+            {{ partial "blocks/narrow-cta" (dict "Params" $p4) }}
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

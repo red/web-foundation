@@ -1,0 +1,121 @@
+{{ define "main" }}
+
+<div>
+    {{ partial "page-title" (dict "title" .Title "subtitle" .Params.subtitle "page" .Params)}}
+
+    <section class="container mx-auto mt-12 px-2 md:px-8 pb-8 text-rl-gray flex flex-col items-center">
+        <div class="card max-w-lg px-4 md:px-8 py-8 text-rl-gray flex flex-col md:flex-row">
+            <div class="flex-1 pr-8">
+                <h3 class="font-semibold text-2xl text-rl-gray rl-l-title-underline">{{ .Params.become_member_header }}</h3>
+                <p class="text-grey-darker">{{ .Params.become_member_desc }}</p>
+            </div>
+            <div class="flex-1">
+                <form class="w-full">
+                    <div class="mb-4">
+                        <label class="block text-grey-darker font-bold mb-1" for="email">
+                            Full Name
+                        </label>
+                        <input class="text-input" id="full-name" name="full-name" type="text" placeholder="Bob Barker" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-grey-darker font-bold mb-1" for="email">
+                            Email
+                        </label>
+                        <input type="email" class="text-input" id="email" name="email" placeholder="woz@apple.com" required>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-red" value="{{ i18n "join" }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card max-w-lg px-4 md:px-8 py-8 text-rl-gray flex flex-col md:flex-row">
+            <div class="flex-1 pr-8">
+                <h3 class="font-semibold text-2xl text-rl-gray rl-l-title-underline">{{ .Params.become_sponsor_header }}</h3>
+                <p class="text-grey-darker">{{ .Params.become_sponsor_desc }}</p>
+            </div>
+            <div class="flex-1">
+                <form class="w-full">
+                    <div class="mb-4">
+                        <label class="block text-grey-darker font-bold mb-1" for="email">
+                            Full Name
+                        </label>
+                        <input class="text-input" id="full-name" name="full-name" type="text" placeholder="Bob Barker" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-grey-darker font-bold mb-1" for="email">
+                            Email
+                        </label>
+                        <input type="email" class="text-input" id="email" name="email" placeholder="woz@apple.com" required>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-red" value="{{ i18n "submitBtn" }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card max-w-lg px-4 md:px-8 py-8 text-rl-gray flex flex-col md:flex-row">
+            <div class="flex-1 pr-8">
+                <h3 class="font-semibold text-2xl text-rl-gray rl-l-title-underline">{{ .Params.donate_header }}</h3>
+                <p class="text-grey-darker">{{ .Params.donate_desc }}</p>
+            </div>
+            <div class="flex-1">
+                <form class="w-full">
+                    <div class="mb-4">
+                        <label class="block text-grey-darker font-bold mb-1" for="email">
+                            Full Name
+                        </label>
+                        <input class="text-input" id="full-name" name="full-name" type="text" placeholder="Bob Barker" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-grey-darker font-bold mb-1" for="email">
+                            Email
+                        </label>
+                        <input type="email" class="text-input" id="email" name="email" placeholder="woz@apple.com" required>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-red" value="{{ i18n "submitBtn" }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    {{- range .Params.blocks -}}
+        {{- if eq .template "hero" -}}{{ partial "blocks/hero" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "media-feature" -}}{{ partial "blocks/media-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "narrow-feature" -}}{{ partial "blocks/narrow-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "call-to-action" -}}{{ partial "blocks/cta" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "1up" -}}{{ partial "blocks/1up" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "2up" -}}{{ partial "blocks/2up" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "1up-media" -}}{{ partial "blocks/1up-media" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "card-grid" -}}{{ partial "blocks/card-grid" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "grid-list" -}}{{ partial "blocks/grid-list" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "accordion" -}}{{ partial "blocks/accordion" (dict "Params" .) }}{{- end -}}
+    {{- end -}}
+
+    {{ with .Content }}
+        <section class="container mx-auto mt-12 px-2 md:px-8 pb-8 text-grey-darker">
+            {{ . }}
+        </section>
+    {{ end }}
+
+    <div class="bg-theme-gradient w-full mt-12">
+        {{ if (isset .Params "blocks") }}
+            {{- range .Params.blocks -}}
+                {{- if eq .template "action-feature" -}}{{ partial "blocks/action-feature" (dict "Params" .) }}{{- end -}}
+                {{- if eq .template "narrow-cta" -}}{{ partial "blocks/narrow-cta" (dict "Params" .) }}{{- end -}}
+            {{- end -}}
+        {{ else }}
+            {{ $p3 := (dict "heading" (i18n "cta_heading") "content" (i18n "cta_desc") "button_text" (i18n "contact") "button_url" (relLangURL "contact/") "bg_dark" false)}}
+            {{ $p4 := (dict "description" (i18n "cta_narrow_heading") "link_text" (i18n "cta_narrow_text") "link_url" (relLangURL "contact/")) }}
+            {{ partial "blocks/action-feature" (dict "Params" $p3) }}
+            {{ partial "blocks/narrow-cta" (dict "Params" $p4) }}
+        {{ end }}
+    </div>
+
+</div>
+
+{{ end }}

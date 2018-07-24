@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="relative overflow-hidden">
+    <div class="absolute pin-t overflow-hidden mobile:hidden index-triangle-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
+            <polygon fill="#dbdde0" points="0,0 0,100 100,0"/>
+        </svg>
+    </div>
+    
+    <div class="absolute pin-b overflow-hidden mobile:hidden index-triangle-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
+            <polygon fill="#e4e4e4" points="0,0 0,100 100,100"/>
+        </svg>
+    </div>
+
+    <!-- Use page-specific blockloader, since we need to divide up some sections -->
+    <div class="mobile:bg-theme-gradient">
+        {{- range .Params.blocks -}}
+            {{- if eq .template "action-feature" -}}{{ partial "blocks/action-feature" (dict "Params" .) }}{{- end -}}
+        {{- end -}}
+    </div>
+    
+    <section class="py-8 mx-4">
+        <div class="container mx-auto">
+            <div class="grid grid-columns-1 grid-gap-xs md:grid-columns-2 md:grid-gap-sm md:w-3/4 grid-justify-center mx-auto">
+                <div class="card bg-golden-gradient">
+                    <h2 class="text-grey-darker">{{ i18n "latest_blogs" }}</h2>
+                    {{ range first 4 (where .Data.Pages.ByDate.Reverse "Section" "blog") }}
+                        {{ .Render "li" }}
+                    {{ end }}
+                </div>
+            
+                <div class="card bg-blue-gradient">
+                    <h2 class="text-rl-gray">{{ i18n "latest_events" }}</h2>        
+                    {{ range first 4 (where .Data.Pages.ByDate.Reverse "Section" "events") }}
+                        {{ .Render "li" }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-4">
+        <div class="container mx-auto flex flex-col items-center">
+            <div class="grid grid-columns-1 grid-gap-xs sm:grid-columns-2 md:grid-columns-4 sm:grid-gap-sm grid-justify-center">
+                {{ range .Site.Params.sponsors -}}
+                    <a class="text-white no-underline mr-4" href="{{ .URL }}" title="{{ .Name }}"><img src="{{ .logo_src }}"></a>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    {{- range .Params.blocks -}}
+        {{- if eq .template "hero" -}}{{ partial "blocks/hero" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "media-feature" -}}{{ partial "blocks/media-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "narrow-feature" -}}{{ partial "blocks/narrow-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "call-to-action" -}}{{ partial "blocks/cta" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "1up" -}}{{ partial "blocks/1up" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "2up" -}}{{ partial "blocks/2up" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "1up-media" -}}{{ partial "blocks/1up-media" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "card-grid" -}}{{ partial "blocks/card-grid" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "grid-list" -}}{{ partial "blocks/grid-list" (dict "Params" .) }}{{- end -}}
+    {{- end -}}
+
+    {{ .Content }}
+
+    <div class="bg-theme-gradient w-full">
+        {{- range .Params.blocks -}}
+            {{- if eq .template "narrow-cta" -}}{{ partial "blocks/narrow-cta" (dict "Params" .) }}{{- end -}}
+        {{- end -}}
+    </div>
+</div>
+{{ end }}
