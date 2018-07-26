@@ -10,7 +10,10 @@
                 <p class="text-grey-darker">{{ .Params.become_member_desc }}</p>
             </div>
             <div class="flex-1">
-                <form class="w-full">
+                <form name="foundation-become-member" method="POST" action="/submitted" netlify netlify-honeypot="bot-field" class="w-full">
+                    <div class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                    </div> 
                     <div class="mb-4">
                         <label class="block text-grey-darker font-bold mb-1" for="email">
                             Full Name
@@ -36,7 +39,10 @@
                 <p class="text-grey-darker">{{ .Params.become_sponsor_desc }}</p>
             </div>
             <div class="flex-1">
-                <form class="w-full">
+                <form name="foundation-become-sponsor" method="POST" action="/submitted" netlify netlify-honeypot="bot-field" class="w-full">
+                    <div class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                    </div> 
                     <div class="mb-4">
                         <label class="block text-grey-darker font-bold mb-1" for="email">
                             Full Name
@@ -62,7 +68,10 @@
                 <p class="text-grey-darker">{{ .Params.donate_desc }}</p>
             </div>
             <div class="flex-1">
-                <form class="w-full">
+                <form name="foundation-donate" method="POST" action="/submitted" netlify netlify-honeypot="bot-field" class="w-full">
+                    <div class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                    </div> 
                     <div class="mb-4">
                         <label class="block text-grey-darker font-bold mb-1" for="email">
                             Full Name
