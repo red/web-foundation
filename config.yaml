@@ -33,6 +33,7 @@ outputs:
 languages:
   en:
     LanguageName: "English"
+    ContentDir: content/en
     params:
       Title: "Red Foundation"
       CopyrightHTML: "Copyright &#xA9; 2018 The Red Foundation"
@@ -60,6 +61,7 @@ languages:
           URL: "/join/"
   fr:
     LanguageName: "Français"
+    ContentDir: content/fr
     params:
       Title: "Red Foundation"
       CopyrightHTML: "Droits d'auteur &#xA9; 2018 The Red Foundation"
@@ -89,6 +91,7 @@ languages:
           URL: "/join/"
   cn:
     LanguageName: "简体中文"
+    ContentDir: content/cn
     params:
       Title: "Red Foundation"
       CopyrightHTML: "Copyright &#xA9; 2018 The Red Foundation Ltd"

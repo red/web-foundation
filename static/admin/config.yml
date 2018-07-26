@@ -12,13 +12,13 @@ collections:
     files:
       - name: "contact"
         label: "Contact"
-        file: "content/contact/_index.md"
+        file: "content/contact/_index.en.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+    label: "Blog (English)"
+    folder: "content/en/blog"
     create: true
     slug: "{{slug}}"
     fields:
@@ -29,5 +29,5 @@ collections:
       - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
       - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
       - { label: "Category", name: "category", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false}
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
       - { label: "Body", name: "body", widget: "markdown" }
