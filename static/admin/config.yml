@@ -24,7 +24,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "date" }
-      - { label: "URL", name: "slug", widget: "string", required: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
       - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
