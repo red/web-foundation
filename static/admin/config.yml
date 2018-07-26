@@ -153,3 +153,48 @@ collections:
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events_en"
+    label: "Events (English)"
+    folder: "content/en/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
+      - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events_fr"
+    label: "Events (French)"
+    folder: "content/fr/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
+      - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events_cn"
+    label: "Events (Chinese)"
+    folder: "content/cn/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
+      - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
