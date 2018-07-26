@@ -5,31 +5,108 @@ backend:
 media_folder: "static/images" # Media files will be stored in the repo under static/images
 public_folder: "/images" # The src attribute for uploaded media will begin with /images
 
-
 collections:
   - name: "pages"
     label: "Pages"
     files:
+      - name: "about_en"
+        label: "About (English)"
+        file: "content/en/about/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Header", name: "header", widget: "string" }
+          - { label: "Team Header", name: "team_header", widget: "string" }
+          - { label: "Board Header", name: "board_header", widget: "string" }
+          - { label: "Community Header", name: "community_header", widget: "string" }
+          - { label: "Top Contributors Header", name: "top_contributors_header", widget: "string" }
+          - { label: "Newest Members Header", name: "newest_members_header", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "about_fr"
+        label: "About (French)"
+        file: "content/fr/about/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Header", name: "header", widget: "string" }
+          - { label: "Team Header", name: "team_header", widget: "string" }
+          - { label: "Board Header", name: "board_header", widget: "string" }
+          - { label: "Community Header", name: "community_header", widget: "string" }
+          - { label: "Top Contributors Header", name: "top_contributors_header", widget: "string" }
+          - { label: "Newest Members Header", name: "newest_members_header", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "about_cn"
+        label: "About (Chinese)"
+        file: "content/cn/about/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Header", name: "header", widget: "string" }
+          - { label: "Team Header", name: "team_header", widget: "string" }
+          - { label: "Board Header", name: "board_header", widget: "string" }
+          - { label: "Community Header", name: "community_header", widget: "string" }
+          - { label: "Top Contributors Header", name: "top_contributors_header", widget: "string" }
+          - { label: "Newest Members Header", name: "newest_members_header", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - name: "contact_en"
         label: "Contact (English)"
         file: "content/en/contact/_index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
       - name: "contact_fr"
         label: "Contact (French)"
         file: "content/fr/contact/_index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
       - name: "contact_cn"
         label: "Contact (Chinese)"
         file: "content/cn/contact/_index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "join_en"
+        label: "Join (English)"
+        file: "content/en/join/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Become Member Header", name: "become_member_header", widget: "string" }
+          - { label: "Become Member Description", name: "become_member_desc", widget: "string" }
+          - { label: "Become Sponsor Header", name: "become_sponsor_header", widget: "string" }
+          - { label: "Become Sponsor Description", name: "become_sponsor_desc", widget: "string" }
+          - { label: "Donate Header", name: "donate_header", widget: "string" }
+          - { label: "Donate Description", name: "donate_desc", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+      - name: "join_fr"
+        label: "Join (French)"
+        file: "content/fr/join/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Become Member Header", name: "become_member_header", widget: "string" }
+          - { label: "Become Member Description", name: "become_member_desc", widget: "string" }
+          - { label: "Become Sponsor Header", name: "become_sponsor_header", widget: "string" }
+          - { label: "Become Sponsor Description", name: "become_sponsor_desc", widget: "string" }
+          - { label: "Donate Header", name: "donate_header", widget: "string" }
+          - { label: "Donate Description", name: "donate_desc", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+      - name: "join_cn"
+        label: "Join (Chinese)"
+        file: "content/cn/join/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Become Member Header", name: "become_member_header", widget: "string" }
+          - { label: "Become Member Description", name: "become_member_desc", widget: "string" }
+          - { label: "Become Sponsor Header", name: "become_sponsor_header", widget: "string" }
+          - { label: "Become Sponsor Description", name: "become_sponsor_desc", widget: "string" }
+          - { label: "Donate Header", name: "donate_header", widget: "string" }
+          - { label: "Donate Description", name: "donate_desc", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "blog_en"
     label: "Blog (English)"
