@@ -10,15 +10,60 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - name: "contact"
-        label: "Contact"
-        file: "content/contact/_index.en.md"
+      - name: "contact_en"
+        label: "Contact (English)"
+        file: "content/en/contact/_index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown", required: false }
-  - name: "blog"
+      - name: "contact_fr"
+        label: "Contact (French)"
+        file: "content/fr/contact/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+      - name: "contact_cn"
+        label: "Contact (Chinese)"
+        file: "content/cn/contact/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "blog_en"
     label: "Blog (English)"
     folder: "content/en/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
+      - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog_fr"
+    label: "Blog (French)"
+    folder: "content/fr/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Hero Type", name: "hero_type", widget: "select", options: ["image", "video"] }
+      - { label: "Hero Image", name: "hero_src", widget: "image", default: "http://via.placeholder.com/500x280", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog_cn"
+    label: "Blog (Chinese)"
+    folder: "content/cn/blog"
     create: true
     slug: "{{slug}}"
     fields:
