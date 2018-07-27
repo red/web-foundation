@@ -48,30 +48,6 @@ community_header: "A Community of 23,958 Members"
 top_contributors_header: "Top Contributors"
 top_contributors:
   num_cols: 6
-newest_members_header: "Newest Members"
-newest_members:
-  num_cols: 6
-  grid_items:
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
-    - description: Member Name
 ---
 
 The overall aims and objectives of the Red Foundation are:

@@ -59,9 +59,6 @@
         <h4 class="font-semibold text-xl text-rl-gray mb-2">{{ .Params.top_contributors_header }}</h5>
         {{ $p1 := (dict "num_cols" .Params.top_contributors.num_cols "grid_items" (.Scratch.Get "users")) }}
         {{ partial "blocks/grid-list" (dict "Params" $p1) }}
-        <h4 class="font-semibold text-xl text-rl-gray mt-4 mb-2">{{ .Params.newest_members_header }}</h5>
-        {{ $p2 := (dict "num_cols" .Params.newest_members.num_cols "grid_items" .Params.newest_members.grid_items) }}
-        {{ partial "blocks/grid-list" (dict "Params" $p2) }}
     </section>
 
     <div class="bg-theme-gradient w-full">

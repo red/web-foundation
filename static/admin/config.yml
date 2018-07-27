@@ -38,7 +38,6 @@ collections:
           - { label: "Board Header", name: "board_header", widget: "string" }
           - { label: "Community Header", name: "community_header", widget: "string" }
           - { label: "Top Contributors Header", name: "top_contributors_header", widget: "string" }
-          - { label: "Newest Members Header", name: "newest_members_header", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - name: "about_fr"
         label: "About (French)"
@@ -51,7 +50,6 @@ collections:
           - { label: "Board Header", name: "board_header", widget: "string" }
           - { label: "Community Header", name: "community_header", widget: "string" }
           - { label: "Top Contributors Header", name: "top_contributors_header", widget: "string" }
-          - { label: "Newest Members Header", name: "newest_members_header", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - name: "about_cn"
         label: "About (Chinese)"
@@ -64,7 +62,6 @@ collections:
           - { label: "Board Header", name: "board_header", widget: "string" }
           - { label: "Community Header", name: "community_header", widget: "string" }
           - { label: "Top Contributors Header", name: "top_contributors_header", widget: "string" }
-          - { label: "Newest Members Header", name: "newest_members_header", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - name: "contact_en"
         label: "Contact (English)"
