@@ -9,6 +9,24 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - name: "home_en"
+        label: "Home (English)"
+        file: "content/en/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "home_fr"
+        label: "Home (French)"
+        file: "content/fr/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "home_cn"
+        label: "Home (Chinese)"
+        file: "content/cn/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - name: "about_en"
         label: "About (English)"
         file: "content/en/about/_index.md"
