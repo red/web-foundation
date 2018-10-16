@@ -3,6 +3,7 @@ title: 'A quick note, and recent updates'
 date: 2018-09-10T20:02:07.000Z
 author: Gregg Irwin
 hero_type: image
+hero_src: /images/red-logo.svg
 category: update
 ---
 It's been quiet here for a while, but busy as can be on the development and planning sides. We have new web sites ready to be filled with content, and all this blog content will transfer. On the PR side, Lucinda Knapp is helping us get organized, and get more regular announcements out. They'll be brief, recapping recent work and notes of interest from https://progress.red-lang.org/ as well as Gitter and other community channels.
