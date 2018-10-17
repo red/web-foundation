@@ -3,7 +3,7 @@ title: Ethereum DevCon IV
 date: 2018-10-15T18:52:27.000Z
 location: 'Prague, Czech Republic'
 hero_type: image
-hero_src: ''
+hero_src: /images/red-logo.svg
 category: conference
 tags:
   - Ethereum DevCon4 Red/C3
