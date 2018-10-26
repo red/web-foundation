@@ -7,7 +7,7 @@ blocks:
     heading: "Red Technology Stack"
     content: |-
       Red is the world's first full-stack language, from meal to meta. With it, you can write everything from device drivers and operating systems, all the way through cross-platform GUIs and metaprogramming systems. Its unique approach to software development eliminates multitudes of problems, making it easier to build secure, reliable software that runs efficiently.
-    image: "http://via.placeholder.com/500x280"
+    image: "/images/playful-toolbox-sm.png"
     image_position: "right"
   - template: "action-feature"
     heading: "Partner with Red"
