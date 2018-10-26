@@ -4,9 +4,9 @@ subtitle: Red is the world’s most powerful programming language, and now it is
 header: "To Fight Software Complexity By Empowering Innovations With The World’s Most Powerful Programming Language"
 blocks:
   - template: "media-feature"
-    heading: "Feature 1"
+    heading: "Red Technology Stack"
     content: |-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et lorem sed quam porta rhoncus. Pellentesque porttitor nisi sit amet tortor tristique, nec euismod odio laoreet. Vivamus non elementum sem, non sodales dolor. 
+      Red is the world's first full-stack language, from meal to meta. With it, you can write everything from device drivers and operating systems, all the way through cross-platform GUIs and metaprogramming systems. Its unique approach to software development eliminates multitudes of problems, making it easier to build secure, reliable software that runs efficiently.
     image: "http://via.placeholder.com/500x280"
     image_position: "right"
   - template: "action-feature"
