@@ -31,7 +31,7 @@ team:
       François Jouen is director of CHArt (Human and Artificial Cognition Lab) in Paris and Director of Studies at EPHE (Ecole Pratique des Hautes Etudes, Université Paris Sciences et Lettres). For more than 20 years, he worked at the National Center for Scientific Research (CNRS) and studied the epigenetic approaches of the human development. Recent topics of research concern the development of motor imagery and brain computing in human children and the development of infrared technology for measuring pain in preterm infants and neonates. François began to program at University, and at MIT, in the Department of Aeronautics and Astronautics for the implementation of space-orbit biological experiments. He is now mainly involved in image processing and in the development of low-cost eye-tracking system and contactless monitoring systems for biological signals.
   - name: Azouz Guizani
     profile_img: "/images/Azouz-Guizani.jpg"
-    description: Azouz Guizani is…
+    description: Azouz is an experienced engineer, having worked in fin-tech companies for over 20 years, managing international technical teams, from front office trading systems to low latency market data feeds.
 board_header: Meet Our Board Members
 board:
   - name: Peter Wood
@@ -56,6 +56,7 @@ The overall aims and objectives of the Red Foundation are:
 * Organizing the Red community of users and contributors
 * Coordinating and organizing events related to Red language, globally
 
+
 With the creation of the RED token, and new commercial and open source Red projects being planned, it was decided that a new governing body should be created to formalize aspects of governance and organization that weren’t needed before. Drawing clear lines, setting boundaries, and laying down rules will help eliminate confusion and conflict between commercial and open source projects, rights, and assets. Adding blockchains into the mix only increases the need for clarity.
 
-It is expected that the Red programming language open source project’s assets will be moved to a non-profit foundation, the Red Foundation, which will define the rules of RED token usage, among other things. We are closely following how the OAX foundation, Aragon and other DAOs operate and will seek partnerships to help build an optimal organization. Voting rules and intra-community modes of operations for RED tokens will be defined and codified by the foundation.
+The Red programming language open source project’s assets have been moved to a non-profit foundation, the Red Foundation, which will define the rules of RED token usage, among other things. We are closely following how the OAX foundation, Aragon and other DAOs operate and will seek partnerships to help build an optimal organization. Voting rules and intra-community modes of operations for RED tokens will be defined and codified by the foundation.
